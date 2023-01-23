@@ -3,7 +3,7 @@
 pkgname=icingadb
 pkgver=1.1.0
 pkgrel=1
-pkgdesc="An open source host, service and network monitoring program"
+pkgdesc="An open source host, service and network monitoring program - icingadb"
 license=('GPL v2.0')
 arch=('x86_64')
 url="https://icinga.com/"
@@ -33,4 +33,13 @@ package() {
 
   # Systemd service
   install -Dm644 "$srcdir/$pkgname.service" "$pkgdir/usr/lib/systemd/system/$pkgname.service"
+}
+
+post_install() {
+  systemctl daemon-reload
+  echo "Enable the IcingadDB service with: \"systemctl enable icingadb\""
+)
+
+pre_remove() {
+  systemctl disable --now icingadb
 }
