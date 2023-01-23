@@ -1,0 +1,3 @@
+u icingadb - "Icinga DB" /etc/icingadb /sbin/nologin
+g icingadb - 
+m icingadb icingadb

@@ -1,0 +1,19 @@
+pkgbase = icingadb
+	pkgdesc = An open source host, service and network monitoring program
+	pkgver = 1.1.0
+	pkgrel = 1
+	url = https://icinga.com/
+	install = icingadb.install
+	arch = x86_64
+	license = GPL v2.0
+	makedepends = go
+	depends = icinga2
+	backup = etc/icingadb/config.yml
+	source = https://github.com/Icinga/icingadb/archive/v1.1.0.tar.gz
+	source = icingadb.service
+	source = icingadb.sysusers
+	sha256sums = 721316166173892f8ba7d7c4f77af3b8576477be108d4a7f98ae14c29732ac31
+	sha256sums = 26f6ee590d433f8933add1b4056c1b2c864ddca15824f8fc47411733eeefad05
+	sha256sums = 84b01b9e8c98193b870944f30f9d16cd0e5d63a8e8cfe5537fb1af4a6100b30e
+
+pkgname = icingadb

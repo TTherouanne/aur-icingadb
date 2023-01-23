@@ -1,0 +1,14 @@
+post_install() {
+  /usr/bin/systemd-sysusers icingadb.conf
+
+  /usr/bin/chown -R icingadb:icingadb \
+    /etc/icingadb \
+    /var/lib/icingadb 
+
+  /usr/bin/icinga2 feature enable icingadb &> /dev/null
+}
+
+pre_remove() {
+  [ -f "/etc/icinga2/features-enabled/icingadb.conf" ] && /usr/bin/icinga2 feature disable icingadb &> /dev/null
+}
+
