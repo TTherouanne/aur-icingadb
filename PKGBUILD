@@ -24,9 +24,9 @@ build() {
 }
 
 package() {
-  mkdir -p $pkgdir/{etc/icingadb,var/lib/icingadb}
+  mkdir -p $pkgdir/{etc/icingadb,usr/share/icingadb}
   install -Dm755 "$pkgname-$pkgver/$pkgname" "$pkgdir/usr/bin/$pkgname"
-  cp -a "$pkgname-$pkgver/schema" "$pkgdir/var/lib/icingadb/schema"
+  cp -a "$pkgname-$pkgver/schema" "$pkgdir/usr/share/icingadb/schema"
   
   # config files for creating users and groups
   install -Dm644 "$srcdir/$pkgname.sysusers" "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"
