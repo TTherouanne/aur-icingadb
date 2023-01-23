@@ -30,4 +30,7 @@ package() {
   
   # config files for creating users and groups
   install -Dm644 "$srcdir/$pkgname.sysusers" "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"
+
+  # Systemd service
+  install -Dm644 "$srcdir/$pkgname.service" "$pkgdir/usr/lib/systemd/system/$pkgname.service"
 }
