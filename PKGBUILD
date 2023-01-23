@@ -38,7 +38,7 @@ package() {
 post_install() {
   systemctl daemon-reload
   echo "Enable the IcingadDB service with: \"systemctl enable icingadb\""
-)
+}
 
 pre_remove() {
   systemctl disable --now icingadb
